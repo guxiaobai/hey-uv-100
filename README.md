@@ -32,6 +32,8 @@ echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completion
 
 ## 问题
 
+> 忽略`.python-version` 文件
+
 是给全局使用的工具，不是绑定到某个项目的，所以它不能因为你切换了项目目录的 .python-version 就换 Python 版本，这样会导致工具不稳定。
 
 ```bash
