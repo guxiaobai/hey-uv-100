@@ -5,18 +5,18 @@
 ## [Standalone installer](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer)
 
 ```bash
-# Standalone installer
 curl -LsSf https://astral.sh/uv/0.8.4/install.sh | sh
 
+# source $HOME/.local/bin/env.fish
+fish_add_path ~/.local/bin/
+```
+
+```bash
 # enable shell autocompletion for uv commands
 echo 'uv generate-shell-completion fish | source' > ~/.config/fish/completions/uv.fish
 
 # enable shell autocompletion for uvx
 echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completions/uvx.fish
-
-# @TODO: 这个是怎么来的？
-# uv tool update-shell
-fish_add_path ~/.local/bin/
 ```
 
 
