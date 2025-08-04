@@ -55,4 +55,4 @@ uv tool run python --version
 ## Ref
 
 * <https://docs.astral.sh/uv/>
-* [用uv管理Python的一切！ - YouTube](https://www.youtube.com/watch?v=aVXs8lb7i9U)
+* <https://github.com/my-python-100/learn-python-100/blob/main/py13.md>
