@@ -2,22 +2,6 @@
 
 # Hey Uv 101
 
-## [Standalone installer](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer)
-
-```bash
-curl -LsSf https://astral.sh/uv/0.8.4/install.sh | sh
-
-# source $HOME/.local/bin/env.fish
-fish_add_path ~/.local/bin/
-```
-
-```bash
-# enable shell autocompletion for uv commands
-echo 'uv generate-shell-completion fish | source' > ~/.config/fish/completions/uv.fish
-
-# enable shell autocompletion for uvx
-echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completions/uvx.fish
-```
 
 
 
@@ -32,7 +16,10 @@ python3.13
 
 
 ```bash
+# 查看可用和已安装的
 uv python list
+
+# 安装特地版本
 uv python install 3.13
 ```
 
@@ -49,7 +36,9 @@ uv python install 3.13 --default
 > `managed`、`system`
 
 ```bash
---python 3.13
+# 在大多数uv命令中，可以使用 --python 选项安装python
+uv run --python 3.13 python
+uv run --python /usr/bin/python3 python
 ```
 
 > `.python-version`
@@ -60,6 +49,22 @@ uv python pin 3.13
 
 # global: ~/.config/uv/.python-version
 uv python pin 3.13 --global
+```
+
+
+
+```bash
+# https://docs.astral.sh/uv/concepts/python-versions/#installing-python-executables
+uv tool update-shell
+
+# /Users/lemon/.config/fish/config.fish
+fish_add_path "/Users/lemon/.local/bin"
+```
+
+
+
+```bash
+uv python find
 ```
 
 
