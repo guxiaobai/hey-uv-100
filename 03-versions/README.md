@@ -5,8 +5,8 @@
 在大多数 uv 命令中，可以使用 `--python` 标志请求特定的 Python 版本
 
 ```bash
-uv run --python 3.13 python
-uv run --python /usr/bin/python3 python
+uv run --python 3.13 python --version
+uv run --python /usr/bin/python3 python --version
 ```
 
 
@@ -28,24 +28,25 @@ uv python pin 3.13 --global
 ## 安装Python 可执行文件
 
 
-
-
-```bash
-warning: `/Users/lemon/.local/bin` is not on your PATH. To use installed Python executables, run `fish_add_path "/Users/lemon/.local/bin"` or `uv python update-shell`.
-```
-
-
-
-Python 可执行文件安装到 `~/.local/bin` 中。但`uv` 没有安装到默认的 `~/.local/bin`的情况下。
+🤔Python 可执行文件安装到 `~/.local/bin` 中。但`uv` 没有安装到默认的 `~/.local/bin`的情况下。
 
 ```bash
 brew install uv
+```
+
+```bash
+uv python install 3.12
+
+warning: `/Users/lemon/.local/bin` is not on your PATH. To use installed Python executables, run `fish_add_path "/Users/lemon/.local/bin"` or `uv python update-shell`.
 ```
 
 
 ```bash
 # https://docs.astral.sh/uv/concepts/python-versions/#installing-python-executables
 uv tool update-shell
+
+# Updated configuration file: /Users/lemon/.config/fish/config.fish
+# Restart your shell to apply changes
 
 # /Users/lemon/.config/fish/config.fish
 fish_add_path "/Users/lemon/.local/bin"
