@@ -3,53 +3,30 @@
 # Hey Uv 101
 
 
-
-
-
-
-
-
-
-
-##  [Python versions](https://docs.astral.sh/uv/concepts/python-versions/)
-
-> `managed`、`system`
+## macOS
 
 ```bash
-# 在大多数uv命令中，可以使用 --python 选项安装python
-uv run --python 3.13 python
-uv run --python /usr/bin/python3 python
-```
+# ls -al /opt/homebrew/share/fish/vendor_completions.d|grep uv
+brew install uv
 
-> `.python-version`
-
-```bash
-# current directory
-uv python pin 3.13
-
-# global: ~/.config/uv/.python-version
-uv python pin 3.13 --global
-```
-
-
-
-```bash
-# https://docs.astral.sh/uv/concepts/python-versions/#installing-python-executables
+# echo $PATH
+# ~/.local/bin
 uv tool update-shell
-
-# /Users/lemon/.config/fish/config.fish
-fish_add_path "/Users/lemon/.local/bin"
 ```
 
 
+
+## Standalone
 
 ```bash
-uv python find
+curl -LsSf https://astral.sh/uv/0.8.4/install.sh | sh
+
+# enable shell autocompletion for uv commands
+echo 'uv generate-shell-completion fish | source' > ~/.config/fish/completions/uv.fish
+
+# enable shell autocompletion for uvx
+echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completions/uvx.fish
 ```
-
-
-
-
 
 
 
