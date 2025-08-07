@@ -3,17 +3,23 @@
 # Hey Uv 101
 
 
+> 手册上并没有这样的安装方式说明，这是参考安装脚本(install.sh)整理所得。适用于(macOS、Standalone)两种方案
+
+```bash
+mkdir ~/.local/bin
+fish_add_path ~/.local/bin
+```
+
+
 ## macOS
 
 ```bash
-# ls -al /opt/homebrew/share/fish/vendor_completions.d|grep uv
 brew install uv
 
-# echo $PATH
-# ~/.local/bin
-uv tool update-shell
+# shell autocompletion
+# (Apple silicon): ls -al /opt/homebrew/share/fish/vendor_completions.d|grep uv
+# (Intel-based): ls -al /usr/local/share/fish/vendor_completions.d|grep uv
 ```
-
 
 
 ## Standalone
@@ -28,9 +34,18 @@ echo 'uv generate-shell-completion fish | source' > ~/.config/fish/completions/u
 echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completions/uvx.fish
 ```
 
+---
+
+## Usage
+
+```bash
+uv python install 3.13
+uv tool install ansible-core
+```
 
 
-## 问题
+
+## 问题（@TODO)
 
 > 忽略`.python-version` 文件
 

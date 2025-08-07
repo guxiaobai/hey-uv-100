@@ -1,6 +1,23 @@
 # 01 Installation
 
 
+## 结论二: 自己添加环境变量更清爽
+
+```bash
+mkdir ~/.local/bin/
+fish_add_path ~/.local/bin/
+
+# 在安装之前配置好环境变量，逻辑更清晰
+# 结论一中所探讨的文件也不会安装了
+```
+
+```
+
+# 默认可执行文件都是安装到: ~/.local/bin
+uv tool update-shell
+uv python update-shell
+```
+
 
 ```bash
 curl -LsSf https://astral.sh/uv/0.8.4/install.sh | sh
@@ -14,7 +31,7 @@ echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completion
 
 
 
-## 结论: 不需要自己添加环境变量了
+## 结论一: 不需要自己添加环境变量了(推荐使用结论二的方案)
 
 ```bash
 # 来源: uv-installer.sh(v0.84)
